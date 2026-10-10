@@ -33,7 +33,7 @@ jobs:
       - name: Build static site
         run: npm run build
         env:
-          BASE_PATH: /patterndrop
+          BASE_PATH: /pattern-drop
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
