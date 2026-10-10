@@ -30,3 +30,4 @@
 
 ## Запуск
 
+https://fromthepluto33.github.io/patterndrop/
