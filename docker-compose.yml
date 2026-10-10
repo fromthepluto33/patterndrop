@@ -1,0 +1,19 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    working_dir: /app
+    command: npm run dev:docker
+    environment:
+      - NODE_ENV=development
+      - NODE_OPTIONS=${APP_NODE_OPTIONS:---max-old-space-size=1024}
+    mem_limit: ${APP_MEMORY_LIMIT:-1536m}
+    memswap_limit: ${APP_MEMORY_SWAP_LIMIT:-1536m}
+    cpus: ${APP_CPU_LIMIT:-1.5}
+    restart: on-failure:3
+    volumes:
+      - .:/app
+      - /app/.next
+    ports:
+      - "8080:8080"
